@@ -35,4 +35,59 @@
 @mixin row-reset() {
   margin: -$gutter;
   width: calc(100% + (2 * #{$gutter}));
+  @media #{$breakpoint-lg-up} {
+    margin: -$gutter-lg;
+    width: calc(100% + (2 * #{$gutter-lg}));
+  }
+}
+
+// Condition to run inside of the col mixin * not for developer use *
+@mixin col-condition($col-number, $gutterSize) {
+  @if type-of($col-number) == number {
+    @if $col-number > $grid-columns or $col-number == 0 {
+      @warn "Column number must be greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
+    } @else {
+      box-sizing: border-box;
+      flex-basis: 100% / $grid-columns * $col-number;
+      max-width: 100% / $grid-columns * $col-number;
+      padding: $gutterSize;
+    }
+    // If no col number is passed then arg is set to "auto" by default
+    // "auto" mode fills the horizontal space with evenly sized containers
+  } @else if $col-number == "auto" {
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    padding: $gutterSize;
+  } @else {
+    @warn "Column number argument must either be the string 'auto' or a number greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
+  }
+} // Condition to run inside of the col mixin * not for developer use *
+@mixin col($breakpoint: "xs", $col-number: "auto", $gutterSize: $gutter) {
+  // If no breakpoint is passed and a col number is just use the first arg as the col number and act like xs
+  @if type-of($breakpoint) == number {
+    $col-number: $breakpoint;
+    @include col-condition($col-number, $gutter);
+  } @else if $breakpoint == "xs" {
+    @include col-condition($col-number, $gutter);
+  } @else if $breakpoint == "sm" {
+    @media #{$breakpoint-sm-up} {
+      @include col-condition($col-number, $gutter);
+    }
+  } @else if $breakpoint == "md" {
+    @media #{$breakpoint-md-up} {
+      @include col-condition($col-number, $gutter);
+    }
+  } @else if $breakpoint == "lg" {
+    @media #{$breakpoint-lg-up} {
+      @include col-condition($col-number, $gutter-lg);
+    }
+  } @else if $breakpoint == "xl" {
+    @media #{$breakpoint-xl-up} {
+      @include col-condition($col-number, $gutter-lg);
+    }
+  } @else {
+    @warn "col mixin requires one of the existing breakpoint prefixes (#{$breakpoint-up-prefixes})";
+  }
 }

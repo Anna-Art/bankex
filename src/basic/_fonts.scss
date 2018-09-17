@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+@import '../fonts/icomoon/icomoon';
 
 @mixin fluid-type($min-font-size: $font-reg, $max-font-size: $font-md, $lower-range: $min-width, $upper-range: $md) {
 
@@ -6,5 +7,5 @@
 }
 
 html {
-  @include fluid-type($font-reg, $font-md, $min-width, $md);
+  @include fluid-type($font-reg, $font-md, $min-width, $md-max);
 }

@@ -1,0 +1,12 @@
+@import 'Feedback/feedback';
+
+.header {
+  background: $bg-secondary;
+  border-bottom: 2px solid $border-color;
+
+  &-inner {
+    @include col(6);
+    @include col(lg, 6);
+    @include flex-col($align: flex-end);
+  }
+}

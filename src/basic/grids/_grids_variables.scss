@@ -7,6 +7,7 @@ $md-max: 735px !default; // Set md breakpoint's max width
 $lg-max: 1600px !default; // Set lg breakpoint's max width
 
 $gutter: 20px !default; // Set gutter size
+$gutter-lg: 1.5 * $gutter;
 
 $content-well-max-width: 'none' !default; // Set the max-width of the content well
 

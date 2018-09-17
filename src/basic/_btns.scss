@@ -1,0 +1,17 @@
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: inherit;
+  &:hover {
+    color: $color-link;
+  }
+  &:disabled {
+    cursor: default;
+  }
+  &-icon + .btn-text,
+  &-text + .btn-icon {
+    padding-left: $gutter / 2;
+  }
+}
