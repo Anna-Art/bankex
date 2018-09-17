@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+
+@mixin fluid-type($min-font-size: $font-reg, $max-font-size: $font-md, $lower-range: $min-width, $upper-range: $md) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+}
+
+html {
+  @include fluid-type($font-reg, $font-md, $min-width, $md);
+}

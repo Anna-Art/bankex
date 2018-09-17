@@ -1,0 +1,38 @@
+// Improvements for sassflexgrids
+@mixin flex-col-base($justify: flex-start, $align: stretch) {
+  align-items: $align;
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+}
+
+@mixin flex-col($breakpoint: 'xs', $justify: flex-start, $align: stretch) {
+  @if type-of($breakpoint) == number {
+    @include flex-col-base($justify, $align);
+  } @else if $breakpoint == 'xs' {
+    @include flex-col-base($justify, $align);
+  } @else if $breakpoint == 'sm' {
+    @media #{$breakpoint-sm-up} {
+      @include flex-col-base($justify, $align);
+    }
+  } @else if $breakpoint == 'md' {
+    @media #{$breakpoint-md-up} {
+      @include flex-col-base($justify, $align);
+    }
+  } @else if $breakpoint == 'lg' {
+    @media #{$breakpoint-lg-up} {
+      @include flex-col-base($justify, $align);
+    }
+  } @else if $breakpoint == 'xl' {
+    @media #{$breakpoint-xl-up} {
+      @include flex-col-base($justify, $align);
+    }
+  } @else {
+    @warn 'flex-col mixin requires one of the existing breakpoint prefixes (#{$breakpoint-up-prefixes})';
+  }
+}
+
+@mixin row-reset() {
+  margin: -$gutter;
+  width: calc(100% + (2 * #{$gutter}));
+}

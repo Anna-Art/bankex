@@ -624,40 +624,5 @@ html {
 
   .hide-xl {
     display: none !important; } }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif; }
-  *:before, *:after {
-    box-sizing: border-box; }
 
-html {
-  font-family: "Roboto", sans-serif; }
-
-#main {
-  height: 100vh; }
-
-.container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: -20px;
-  width: calc(100% + (2 * 20px)); }
-  .container-inner {
-    box-sizing: border-box;
-    flex-basis: 100%;
-    max-width: 100%;
-    padding: 20px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-
-/*# sourceMappingURL=application.css.map */
+/*# sourceMappingURL=Base.css.map */
