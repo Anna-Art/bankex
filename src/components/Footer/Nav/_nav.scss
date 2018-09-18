@@ -1,0 +1,24 @@
+.footer-nav {
+  @include row();
+  font-size: .6rem;
+
+  &-inner {
+    @include col();
+    @include col(lg);
+    @include flex-col($justify: flex-start);
+  }
+
+  &-items {
+    @include row();
+    @include start();
+    @include marginX(-$gutter / 2);
+    font-weight: 700;
+  }
+
+  &-item {
+    padding-top: $gutter / 4;
+    padding-right: $gutter / 2;
+    padding-bottom: $gutter / 4;
+    padding-left: $gutter / 2;
+  }
+}

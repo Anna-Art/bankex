@@ -1,4 +1,23 @@
+@import 'Nav/nav';
+
 .footer {
   background: $bg-secondary;
   border-top: 4px solid $border-color;
+  &-inner {
+    @include row();
+    @include row-reset();
+    @include between();
+    @include middle();
+  }
+
+  &-col {
+    &.-nav {
+      @include col(4);
+      @include col(lg, 4);
+    }
+    &.-social {
+      @include col(2);
+      @include col(lg, 2);
+    }
+  }
 }
