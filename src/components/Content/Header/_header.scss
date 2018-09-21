@@ -1,0 +1,10 @@
+.content-header {
+  @include row();
+  @include marginX(-$gutter);
+  font-size: 1.5rem;
+  font-weight: 900;
+  &-title {
+    @include col();
+    margin-top: -$gutter;
+  }
+}

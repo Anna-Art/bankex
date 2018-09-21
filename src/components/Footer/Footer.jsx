@@ -11,7 +11,7 @@ export class Footer extends Component {
             <Nav />
           </div>
           <div className="footer-col -social">
-            <Social />
+            <Social title="Follow us" />
           </div>
         </div>
       </div>

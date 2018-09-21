@@ -40,10 +40,11 @@
 @mixin row-reset() {
   margin: -$gutter;
   width: calc(100% + (2 * #{$gutter}));
-  @media #{$breakpoint-lg-up} {
-    margin: -$gutter-lg;
-    width: calc(100% + (2 * #{$gutter-lg}));
-  }
+@media #{$breakpoint-lg-up} {
+  width: calc(100% + (2 * #{$gutter-lg}));
+  margin: -$gutter-lg;
+}
+
 }
 
 // Condition to run inside of the col mixin * not for developer use *

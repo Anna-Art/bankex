@@ -2,8 +2,8 @@
 @import 'Social/social';
 
 .footer {
-  background: $bg-secondary;
   border-top: 4px solid $border-color;
+  background: $bg-secondary;
   &-inner {
     @include row();
     @include row-reset();
@@ -30,7 +30,7 @@
       @include col(lg, 2);
     }
 
-    + .footer-col {
+     + .footer-col {
       margin-top: -$gutter;
       @media #{$breakpoint-md-up} {
         margin-top: 0;

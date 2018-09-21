@@ -1,7 +1,7 @@
 .footer-social {
   $iconSize: 40px;
 
-  @include row();
+@include row();
 
   &-inner {
     @include col();
@@ -23,12 +23,12 @@
     padding-top: 0;
     color: $color-secondary;
     font-size: .6rem;
-    font-weight: 700;
+    font-weight: 900;
     @media #{$breakpoint-md-up} {
       padding-top: $gutter;
     }
   }
-  
+
   &-items {
     @include row();
     @include start();
@@ -46,18 +46,18 @@
 
   &-link {
     display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
     width: $iconSize;
     height: $iconSize;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    background: $bg-link;
+    color: $color-secondary;
     border: 1px solid $bg-link;
     border-radius: 8px;
-    color: $color-secondary;
+    background: $bg-link;
     &:hover {
-      border-color: $color-link;
       text-decoration: none;
+      border-color: $color-link;
     }
   }
 }

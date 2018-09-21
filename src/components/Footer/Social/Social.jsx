@@ -8,7 +8,7 @@ export class Social extends Component {
       <div className="footer-social">
         <div className="footer-social-inner">
           <header className="footer-social-header">
-            <div className="footer-social-title">Follow us</div>
+            <div className="footer-social-title">{ this.props.title }</div>
           </header>
 
           <div className="footer-social-items">

@@ -1,9 +1,9 @@
 .btn {
   cursor: pointer;
+  color: inherit;
   border: 0;
   outline: 0;
   background: none;
-  color: inherit;
   &:hover {
     color: $color-link;
   }

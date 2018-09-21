@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import Nav from './Nav/Nav';
-import Social from './Social/Social';
+import Header from './Header/Header';
 
-export class Footer extends Component {
+export class Content extends Component {
   render() {
     return (
-      <div className="footer">
-        <div className="footer-inner">
-          <div className="footer-col -nav">
-            <Nav />
-          </div>
-          <div className="footer-col -social">
-            <Social />
+      <div className="content">
+        <div className="content-inner">
+          <Header title="Settings" />
+
+          <div className="content-text">
+            <p>
+              Two-factor autentification is&nbsp;enabled via MFA app. <br />
+              You can&apos;t disable 2FA now. If&nbsp;you are having problem with Custody service, contact&nbsp;us <a href="mailto:support@bankexcustody.com">support@bankexcustody.com</a>.
+            </p>
           </div>
         </div>
       </div>
     );
   }
 }
-export default Footer;
+export default Content;

@@ -1,40 +1,17 @@
-@import 'Nav/nav';
-@import 'Social/social';
+@import 'Header/header';
 
-.footer {
-  background: $bg-secondary;
-  border-top: 4px solid $border-color;
+.content {
+  @include row();
+  flex-grow: 2;
+
   &-inner {
-    @include row();
-    @include row-reset();
-    @include between();
-    @include middle();
+    @include col(6);
+    @include col(lg, 3);
   }
 
-  &-col {
-    &:not(:last-child) {
-      margin-bottom: -$gutter;
-      @media #{$breakpoint-md-up} {
-        margin-bottom: 0;
-      }
-    }
-
-    &.-nav {
-      @include col(6);
-      @include col(md, 3);
-      @include col(lg, 4);
-    }
-    &.-social {
-      @include col(6);
-      @include col(md, 3);
-      @include col(lg, 2);
-    }
-
-    + .footer-col {
-      margin-top: -$gutter;
-      @media #{$breakpoint-md-up} {
-        margin-top: 0;
-      }
-    }
+  &-text {
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.3;
   }
 }

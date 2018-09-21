@@ -1,8 +1,8 @@
 @import 'Feedback/feedback';
 
 .header {
-  background: $bg-secondary;
   border-bottom: 2px solid $border-color;
+  background: $bg-secondary;
 
   &-inner {
     @include col(6);

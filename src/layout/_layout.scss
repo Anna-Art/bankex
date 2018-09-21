@@ -13,26 +13,23 @@ html {
   font-family: $font;
 }
 body {
-  background: $bg-primary;
   min-width: $min-width;
+  background: $bg-primary;
 }
 
 #main {
-  height: 100vh;
+  @include row();
   overflow: hidden;
   background: $bg-primary;
 }
 
 .container {
-  @include row();
-  width: calc(100% + (2 * #{$gutter}));
-  min-width: calc(#{$min-width} + (2 * #{$gutter}));
-  height: calc(100% + (2 * #{$gutter}));
-  margin: -$gutter;
-
-  &-inner {
-    @include col(6);
-    @include flex-col($align: shrink, $justify: space-between);
-    height: 100%;
-  }
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  min-width: $min-width;
+  min-height: 100vh;
 }
