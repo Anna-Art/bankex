@@ -7,5 +7,8 @@
 }
 
 html {
-  @include fluid-type($font-reg, $font-md, $min-width, $md-max);
+  @include fluid-type($font-md, $font-lg, $min-width, $md-max);
+  @media #{$breakpoint-lg-up} {
+    @include fluid-type($font-reg, $font-md, $min-width, $md-max);
+  }
 }

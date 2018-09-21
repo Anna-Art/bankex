@@ -1,0 +1,63 @@
+.footer-social {
+  $iconSize: 40px;
+
+  @include row();
+
+  &-inner {
+    @include col();
+    @include col(lg);
+    @include flex-col($justify: flex-start);
+    padding-top: 0;
+    @media #{$breakpoint-md-up} {
+      padding-top: $gutter;
+    }
+  }
+
+  &-header {
+    @include row();
+    @include marginX(-$gutter);
+  }
+
+  &-title {
+    @include col();
+    padding-top: 0;
+    color: $color-secondary;
+    font-size: .6rem;
+    font-weight: 700;
+    @media #{$breakpoint-md-up} {
+      padding-top: $gutter;
+    }
+  }
+  
+  &-items {
+    @include row();
+    @include start();
+    @include middle();
+    @include marginX(-$gutter / 2);
+    font-weight: 700;
+  }
+
+  &-item {
+    padding-top: $gutter / 4;
+    padding-right: $gutter / 2;
+    padding-bottom: $gutter / 4;
+    padding-left: $gutter / 2;
+  }
+
+  &-link {
+    display: flex;
+    width: $iconSize;
+    height: $iconSize;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: $bg-link;
+    border: 1px solid $bg-link;
+    border-radius: 8px;
+    color: $color-secondary;
+    &:hover {
+      border-color: $color-link;
+      text-decoration: none;
+    }
+  }
+}
